@@ -1,0 +1,77 @@
+# detekt.yml — Phase 1 baseline configuration
+# Detekt 1.23.8, warning-only in CI (continue-on-error: true in ci.yml)
+# Rules are tightened in Phase 6 hardening pass.
+
+build:
+  maxIssues: 0
+  excludeCorrectable: false
+  weights:
+    # All severity weights set to 0 in Phase 1 — reports issues but does not fail build
+    complexity: 0
+    coroutines: 0
+    empty-blocks: 0
+    exceptions: 0
+    formatting: 0
+    naming: 0
+    performance: 0
+    potential-bugs: 0
+    style: 0
+
+config:
+  validation: true
+  warningsAsErrors: false
+
+processors:
+  active: true
+  exclude:
+    - 'DetektProgressListener'
+
+console-reports:
+  active: true
+  exclude:
+    - 'ProjectStatisticsReport'
+    - 'ComplexityReport'
+    - 'NotificationReport'
+    - 'FindingsReport'
+    - 'FileBasedFindingsReport'
+
+output-reports:
+  active: true
+
+# Naming rules — permissive for Phase 1
+naming:
+  active: true
+  ClassNaming:
+    active: true
+    classPattern: '[A-Z][a-zA-Z0-9]*'
+  FunctionNaming:
+    active: true
+    functionPattern: '([a-z][a-zA-Z0-9]*)|([A-Z][a-zA-Z0-9]*)'
+    # Allow capitalized names for Composable functions (e.g., VoiceScreen, AppNavHost)
+    ignoreAnnotated:
+      - 'Composable'
+
+# Complexity rules — warnings only in Phase 1
+complexity:
+  active: true
+  LongMethod:
+    active: true
+    threshold: 60
+  LongParameterList:
+    active: true
+    functionThreshold: 6
+    constructorThreshold: 7
+
+# Style rules
+style:
+  active: true
+  MagicNumber:
+    active: true
+    ignoreNumbers:
+      - '-1'
+      - '0'
+      - '1'
+      - '2'
+      - '17'
+      - '26'
+      - '35'
