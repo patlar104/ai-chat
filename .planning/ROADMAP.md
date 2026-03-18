@@ -31,7 +31,15 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. CI runs on every push and reports formatting and build validation status
   4. Any module can inject a dependency via Hilt without additional wiring
   5. Navigating to any feature screen from the app module succeeds via the Navigation host
-**Plans**: TBD
+**Plans**: 6 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Gradle version catalog (libs.versions.toml), settings.gradle.kts, root build.gradle.kts with feature→feature ban, Gradle 9.3.1 wrapper
+- [ ] 01-02-PLAN.md — Scaffold all 15 modules (:app + 8 core + 7 feature) with build.gradle.kts, AndroidManifest.xml, and placeholder Kotlin files
+- [ ] 01-03-PLAN.md — GitHub Actions CI workflow (ktlint blocking, detekt warning-only, build validation, feature-dep check script), detekt.yml
+- [ ] 01-04-PLAN.md — Hilt DI wiring: @HiltAndroidApp on AICompanionApp, @AndroidEntryPoint on MainActivity, Timber.plant, 6 core @Module @InstallIn stubs
+- [ ] 01-05-PLAN.md — Navigation host: AppNavHost composable routing to all 7 feature placeholder screens via imported route constants
+- [ ] 01-06-PLAN.md — Baseline error model: AppError sealed class + Logger interface in :core:domain, TimberLogger + AppModule @Binds in :app
 
 ### Phase 2: Voice + Home Control MVP
 **Goal**: Users can speak commands, hear spoken replies, control smart-home devices and routines by voice, create and manage reminders, and configure the app — all working offline for core functions
@@ -99,7 +107,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Scaffold | 0/TBD | Not started | - |
+| 1. Foundation & Scaffold | 0/6 | Not started | - |
 | 2. Voice + Home Control MVP | 0/TBD | Not started | - |
 | 3. AI Routing + Privacy | 0/TBD | Not started | - |
 | 4. Background Ops + Memory | 0/TBD | Not started | - |
