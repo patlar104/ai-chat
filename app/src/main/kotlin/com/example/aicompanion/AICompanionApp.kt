@@ -1,6 +1,15 @@
 package com.example.aicompanion
 
 import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+import timber.log.Timber
 
-// Placeholder — @HiltAndroidApp and Timber.plant() added in Plan 04 (Hilt wiring)
-class AICompanionApp : Application()
+@HiltAndroidApp
+class AICompanionApp : Application() {
+    override fun onCreate() {
+        super.onCreate()
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
+    }
+}
