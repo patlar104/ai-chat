@@ -1,0 +1,23 @@
+# Auto Claude data directory
+.auto-claude/
+
+# Gradle
+.gradle/
+build/
+*/build/
+gradle-app.setting
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Android Studio
+.idea/
+*.iml
+local.properties
+*.DS_Store
+
+# Generated
+/app/release/
+
+# Test output
+/test-results/
+/jacoco/
