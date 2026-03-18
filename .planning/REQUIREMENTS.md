@@ -157,28 +157,82 @@ Explicitly excluded. Documented to prevent scope creep.
 
 ## Traceability
 
-Which phases cover which requirements. Populated during roadmap creation.
+Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SCAF-01 through SCAF-06 | Phase 1 | Pending |
-| VOIC-01 through VOIC-06 | Phase 2 | Pending |
-| TTS-01 through TTS-03 | Phase 2 | Pending |
-| CONV-01 through CONV-04 | Phase 2 | Pending |
-| ROUT-01 through ROUT-05 | Phase 3 | Pending |
-| HOME-01 through HOME-07 | Phase 2 | Pending |
-| TASK-01 through TASK-04 | Phase 2 | Pending |
-| AVAT-01 through AVAT-04 | Phase 6 | Pending |
-| BKGD-01 through BKGD-03 | Phase 4 | Pending |
-| MEMO-01 through MEMO-06 | Phase 5 | Pending |
-| PRIV-01 through PRIV-06 | Phase 3 | Pending |
-| SETT-01 through SETT-04 | Phase 2 | Pending |
+| SCAF-01 | Phase 1 | Pending |
+| SCAF-02 | Phase 1 | Pending |
+| SCAF-03 | Phase 1 | Pending |
+| SCAF-04 | Phase 1 | Pending |
+| SCAF-05 | Phase 1 | Pending |
+| SCAF-06 | Phase 1 | Pending |
+| VOIC-01 | Phase 2 | Pending |
+| VOIC-02 | Phase 2 | Pending |
+| VOIC-03 | Phase 2 | Pending |
+| VOIC-04 | Phase 2 | Pending |
+| VOIC-05 | Phase 2 | Pending |
+| VOIC-06 | Phase 2 | Pending |
+| TTS-01 | Phase 2 | Pending |
+| TTS-02 | Phase 2 | Pending |
+| TTS-03 | Phase 2 | Pending |
+| CONV-01 | Phase 2 | Pending |
+| CONV-02 | Phase 2 | Pending |
+| CONV-03 | Phase 2 | Pending |
+| CONV-04 | Phase 2 | Pending |
+| ROUT-01 | Phase 3 | Pending |
+| ROUT-02 | Phase 3 | Pending |
+| ROUT-03 | Phase 3 | Pending |
+| ROUT-04 | Phase 3 | Pending |
+| ROUT-05 | Phase 3 | Pending |
+| HOME-01 | Phase 2 | Pending |
+| HOME-02 | Phase 2 | Pending |
+| HOME-03 | Phase 2 | Pending |
+| HOME-04 | Phase 2 | Pending |
+| HOME-05 | Phase 2 | Pending |
+| HOME-06 | Phase 2 | Pending |
+| HOME-07 | Phase 2 | Pending |
+| TASK-01 | Phase 2 | Pending |
+| TASK-02 | Phase 2 | Pending |
+| TASK-03 | Phase 2 | Pending |
+| TASK-04 | Phase 2 | Pending |
+| AVAT-01 | Phase 5 | Pending |
+| AVAT-02 | Phase 5 | Pending |
+| AVAT-03 | Phase 5 | Pending |
+| AVAT-04 | Phase 5 | Pending |
+| BKGD-01 | Phase 4 | Pending |
+| BKGD-02 | Phase 4 | Pending |
+| BKGD-03 | Phase 4 | Pending |
+| MEMO-01 | Phase 4 | Pending |
+| MEMO-02 | Phase 4 | Pending |
+| MEMO-03 | Phase 4 | Pending |
+| MEMO-04 | Phase 4 | Pending |
+| MEMO-05 | Phase 4 | Pending |
+| MEMO-06 | Phase 4 | Pending |
+| PRIV-01 | Phase 3 | Pending |
+| PRIV-02 | Phase 3 | Pending |
+| PRIV-03 | Phase 3 | Pending |
+| PRIV-04 | Phase 3 | Pending |
+| PRIV-05 | Phase 3 | Pending |
+| PRIV-06 | Phase 3 | Pending |
+| SETT-01 | Phase 2 | Pending |
+| SETT-02 | Phase 2 | Pending |
+| SETT-03 | Phase 2 | Pending |
+| SETT-04 | Phase 2 | Pending |
 
 **Coverage:**
-- v1 requirements: 54 total
-- Mapped to phases: 54
+- v1 requirements: 58 total
+- Mapped to phases: 58
 - Unmapped: 0 ✓
+
+**Phase distribution:**
+- Phase 1 (Foundation & Scaffold): 6 requirements
+- Phase 2 (Voice + Home Control MVP): 28 requirements
+- Phase 3 (AI Routing + Privacy): 11 requirements
+- Phase 4 (Background Ops + Memory): 9 requirements
+- Phase 5 (Avatar): 4 requirements
+- Phase 6 (Hardening & Release): 0 new requirements (cross-cutting validation pass)
 
 ---
 *Requirements defined: 2026-03-18*
-*Last updated: 2026-03-18 after initial definition*
+*Last updated: 2026-03-18 — traceability updated after roadmap creation*
