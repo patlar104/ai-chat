@@ -12,7 +12,7 @@ Six coarse phases take this project from a compilable multi-module scaffold to a
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation & Scaffold** - Compilable 15-module Android project with enforced dependency rules, Hilt DI, navigation host, CI, and baseline conventions
+- [x] **Phase 1: Foundation & Scaffold** - Compilable 15-module Android project with enforced dependency rules, Hilt DI, navigation host, CI, and baseline conventions
 - [ ] **Phase 2: Voice + Home Control MVP** - Button-to-talk voice loop, TTS confirmation, persistent conversation history, Home Assistant device control, reminders, and settings
 - [ ] **Phase 3: AI Routing + Privacy** - Hybrid AI router (deterministic → cloud), privacy mode enforced at network interceptor, offline degraded mode
 - [ ] **Phase 4: Background Ops + Memory** - WorkManager briefings and automations, persistent user memory with explicit review and delete controls
@@ -107,7 +107,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Scaffold | 3/6 | In Progress|  |
+| 1. Foundation & Scaffold | 6/6 | Complete ✓ | 2026-03-18 |
 | 2. Voice + Home Control MVP | 0/TBD | Not started | - |
 | 3. AI Routing + Privacy | 0/TBD | Not started | - |
 | 4. Background Ops + Memory | 0/TBD | Not started | - |
