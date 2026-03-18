@@ -16,7 +16,7 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 - [ ] **SCAF-03**: CI runs formatting checks and baseline build validation
 - [ ] **SCAF-04**: Dependency injection (Hilt) is wired at the app level and available in all modules
 - [ ] **SCAF-05**: Navigation host is established in the app module and routes to all feature screens
-- [ ] **SCAF-06**: Baseline error model and logging conventions are in place
+- [x] **SCAF-06**: Baseline error model and logging conventions are in place
 
 ### Voice Shell
 
@@ -166,7 +166,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SCAF-03 | Phase 1 | Pending |
 | SCAF-04 | Phase 1 | Pending |
 | SCAF-05 | Phase 1 | Pending |
-| SCAF-06 | Phase 1 | Pending |
+| SCAF-06 | Phase 1 | Complete |
 | VOIC-01 | Phase 2 | Pending |
 | VOIC-02 | Phase 2 | Pending |
 | VOIC-03 | Phase 2 | Pending |
