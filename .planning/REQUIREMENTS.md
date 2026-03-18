@@ -11,8 +11,8 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 
 ### Scaffold & Foundation
 
-- [ ] **SCAF-01**: Repository compiles a minimal Android shell across all 15 modules
-- [ ] **SCAF-02**: Gradle module dependency rules prevent feature → feature imports (enforced by Lint or build tooling)
+- [x] **SCAF-01**: Repository compiles a minimal Android shell across all 15 modules
+- [x] **SCAF-02**: Gradle module dependency rules prevent feature → feature imports (enforced by Lint or build tooling)
 - [ ] **SCAF-03**: CI runs formatting checks and baseline build validation
 - [ ] **SCAF-04**: Dependency injection (Hilt) is wired at the app level and available in all modules
 - [ ] **SCAF-05**: Navigation host is established in the app module and routes to all feature screens
@@ -161,8 +161,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SCAF-01 | Phase 1 | Pending |
-| SCAF-02 | Phase 1 | Pending |
+| SCAF-01 | Phase 1 | Complete |
+| SCAF-02 | Phase 1 | Complete |
 | SCAF-03 | Phase 1 | Pending |
 | SCAF-04 | Phase 1 | Pending |
 | SCAF-05 | Phase 1 | Pending |
