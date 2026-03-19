@@ -62,7 +62,7 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 
 - [x] **TASK-01**: User can create a reminder by voice command with a specified time or description
 - [x] **TASK-02**: Reminders trigger a system notification at the scheduled time
-- [ ] **TASK-03**: User can view a list of pending reminders in the Tasks screen
+- [x] **TASK-03**: User can view a list of pending reminders in the Tasks screen
 - [x] **TASK-04**: User can cancel or delete a pending reminder
 
 ### Avatar
@@ -98,10 +98,10 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 
 ### Settings
 
-- [ ] **SETT-01**: User can configure Home Assistant server URL and long-lived access token (stored securely via Android Keystore + DataStore — not EncryptedSharedPreferences)
-- [ ] **SETT-02**: User can toggle privacy mode (cloud AI lockout)
-- [ ] **SETT-03**: User can configure TTS voice preference
-- [ ] **SETT-04**: User can toggle background automation and briefings on/off
+- [x] **SETT-01**: User can configure Home Assistant server URL and long-lived access token (stored securely via Android Keystore + DataStore — not EncryptedSharedPreferences)
+- [x] **SETT-02**: User can toggle privacy mode (cloud AI lockout)
+- [x] **SETT-03**: User can configure TTS voice preference
+- [x] **SETT-04**: User can toggle background automation and briefings on/off
 
 ---
 
@@ -194,7 +194,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | HOME-07 | Phase 2 | Complete |
 | TASK-01 | Phase 2 | Complete |
 | TASK-02 | Phase 2 | Complete |
-| TASK-03 | Phase 2 | Pending |
+| TASK-03 | Phase 2 | Complete |
 | TASK-04 | Phase 2 | Complete |
 | AVAT-01 | Phase 5 | Pending |
 | AVAT-02 | Phase 5 | Pending |
@@ -215,10 +215,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PRIV-04 | Phase 3 | Pending |
 | PRIV-05 | Phase 3 | Pending |
 | PRIV-06 | Phase 3 | Pending |
-| SETT-01 | Phase 2 | Pending |
-| SETT-02 | Phase 2 | Pending |
-| SETT-03 | Phase 2 | Pending |
-| SETT-04 | Phase 2 | Pending |
+| SETT-01 | Phase 2 | Complete |
+| SETT-02 | Phase 2 | Complete |
+| SETT-03 | Phase 2 | Complete |
+| SETT-04 | Phase 2 | Complete |
 
 **Coverage:**
 - v1 requirements: 58 total
