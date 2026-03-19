@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 02-05-PLAN.md
-last_updated: "2026-03-19T13:22:35Z"
+stopped_at: Completed 02-06-PLAN.md
+last_updated: "2026-03-19T13:28:40.898Z"
 progress:
   total_phases: 6
   completed_phases: 1
   total_plans: 16
-  completed_plans: 9
+  completed_plans: 12
 ---
 
 # Project State
@@ -48,6 +48,7 @@ Plan: 5 of 10
 *Updated after each plan completion*
 | Phase 01 P03 | 1 | 2 tasks | 3 files |
 | Phase 02 P02 | 2m | 2 tasks | 8 files |
+| Phase 02 P06 | 2m | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,9 @@ Recent decisions affecting current work:
 - [02-05]: NetworkModule changed from object to abstract class — required for Hilt @Binds support
 - [02-05]: TURN_OFF matched before TURN_ON in CommandParser — prevents greedy trailing-on match false positives
 - [02-05]: Brightness converted from % (0-100) to HA int (0-255) at parse time, not at HA call time
+- [Phase 02-06]: Class.forName used in ReminderScheduler to reference ReminderReceiver — avoids :core:automation depending on :app module
+- [Phase 02-06]: description passed through ReminderScheduler.schedule() as intent extra — avoids Room query in receiver for Phase 2
+- [Phase 02-06]: BootReceiver uses @AndroidEntryPoint + goAsync() — standard Hilt+coroutine pattern for BroadcastReceiver async work
 
 ### Pending Todos
 
@@ -96,6 +100,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T13:22:35Z
-Stopped at: Completed 02-05-PLAN.md
+Last session: 2026-03-19T13:28:40.896Z
+Stopped at: Completed 02-06-PLAN.md
 Resume file: None

@@ -23,7 +23,7 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 - [ ] **VOIC-01**: User can initiate a voice session by pressing a button (button-to-talk)
 - [x] **VOIC-02**: Assistant visual state reflects Idle, Listening, Transcribing, Processing, Speaking, and Error states
 - [ ] **VOIC-03**: User speech is captured via Android SpeechRecognizer and transcribed to text
-- [ ] **VOIC-04**: Voice session runs in a foreground service with correct foreground service type declared in manifest
+- [x] **VOIC-04**: Voice session runs in a foreground service with correct foreground service type declared in manifest
 - [ ] **VOIC-05**: Audio focus is requested and abandoned correctly across the voice session lifecycle
 - [ ] **VOIC-06**: User can interrupt or stop an in-progress assistant reply
 
@@ -61,9 +61,9 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 ### Tasks & Reminders
 
 - [x] **TASK-01**: User can create a reminder by voice command with a specified time or description
-- [ ] **TASK-02**: Reminders trigger a system notification at the scheduled time
+- [x] **TASK-02**: Reminders trigger a system notification at the scheduled time
 - [ ] **TASK-03**: User can view a list of pending reminders in the Tasks screen
-- [ ] **TASK-04**: User can cancel or delete a pending reminder
+- [x] **TASK-04**: User can cancel or delete a pending reminder
 
 ### Avatar
 
@@ -170,7 +170,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | VOIC-01 | Phase 2 | Pending |
 | VOIC-02 | Phase 2 | Complete |
 | VOIC-03 | Phase 2 | Pending |
-| VOIC-04 | Phase 2 | Pending |
+| VOIC-04 | Phase 2 | Complete |
 | VOIC-05 | Phase 2 | Pending |
 | VOIC-06 | Phase 2 | Pending |
 | TTS-01 | Phase 2 | Pending |
@@ -193,9 +193,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | HOME-06 | Phase 2 | Complete |
 | HOME-07 | Phase 2 | Complete |
 | TASK-01 | Phase 2 | Complete |
-| TASK-02 | Phase 2 | Pending |
+| TASK-02 | Phase 2 | Complete |
 | TASK-03 | Phase 2 | Pending |
-| TASK-04 | Phase 2 | Pending |
+| TASK-04 | Phase 2 | Complete |
 | AVAT-01 | Phase 5 | Pending |
 | AVAT-02 | Phase 5 | Pending |
 | AVAT-03 | Phase 5 | Pending |
