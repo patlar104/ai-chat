@@ -75,7 +75,13 @@ Plans:
   3. Enabling privacy mode blocks all cloud AI and cloud TTS network requests — verified by observing no outbound cloud calls
   4. Privacy mode active state is visible in the UI, and a plain-language message explains degraded mode when offline
   5. Every conversation message in the chat log records which routing tier handled it (deterministic, local AI, or cloud)
-**Plans**: TBD
+**Plans**: 4 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — AI Router Foundation (TDD): Central gateway logic, Tier 1 (Deterministic) integration, and VoiceViewModel refactor
+- [ ] 03-02-PLAN.md — Cloud AI Integration: Gemini SDK setup, CloudAiService implementation, Tier 2 fallback, and Chat UI badges
+- [ ] 03-03-PLAN.md — Privacy Interceptor: Network-level blocking of cloud AI domains when privacy mode is enabled
+- [ ] 03-04-PLAN.md — UI & Degraded Mode: Spoken feedback for blocked cloud requests and visual privacy/offline indicators
 
 ### Phase 4: Background Ops + Memory
 **Goal**: The assistant operates proactively in the background with morning briefings and scheduled automations, while persisting user preferences and memory facts the user can fully review and delete
@@ -121,7 +127,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 |-------|----------------|--------|-----------|
 | 1. Foundation & Scaffold | 6/6 | Complete ✓ | 2026-03-18 |
 | 2. Voice + Home Control MVP | 7/10 | In Progress|  |
-| 3. AI Routing + Privacy | 0/TBD | Not started | - |
+| 3. AI Routing + Privacy | 0/4 | Not started | - |
 | 4. Background Ops + Memory | 0/TBD | Not started | - |
 | 5. Avatar | 0/TBD | Not started | - |
 | 6. Hardening & Release | 0/TBD | Not started | - |
