@@ -7,7 +7,7 @@ import com.example.aicompanion.core.audio.focus.AudioFocusManager
 import com.example.aicompanion.core.audio.model.SpeechResult
 import com.example.aicompanion.core.audio.speech.SpeechRecognizerManager
 import com.example.aicompanion.core.audio.tts.TextToSpeechManager
-import com.example.aicompanion.core.ai.parser.CommandParser
+import com.example.aicompanion.core.ai.routing.AiRouter
 import com.example.aicompanion.core.domain.di.MainDispatcher
 import com.example.aicompanion.core.domain.error.AppError
 import com.example.aicompanion.core.domain.logging.Logger
@@ -54,7 +54,7 @@ class VoiceViewModel @Inject constructor(
     private val speechManager: SpeechRecognizerManager,
     private val ttsManager: TextToSpeechManager,
     private val audioFocusManager: AudioFocusManager,
-    private val commandParser: CommandParser,
+    private val aiRouter: AiRouter,
     private val haRepository: HomeAssistantRepository,
     private val aliasRepository: AliasRepository,
     private val messageRepository: MessageRepository,
@@ -165,8 +165,9 @@ class VoiceViewModel @Inject constructor(
         )
         messageRepository.insert(userMessage)
 
-        // Parse intent
-        val intent = commandParser.parse(text)
+        // Parse intent through router
+        val result = aiRouter.resolveIntent(text)
+        val intent = result.intent
 
         // Execute intent
         val replyText = when (intent) {
@@ -177,13 +178,11 @@ class VoiceViewModel @Inject constructor(
             is ParsedIntent.Unknown -> "Sorry, I didn't understand that. I can control devices, set reminders, and execute routines."
         }
 
-        val sourceType = if (intent is ParsedIntent.Unknown) SourceType.UNKNOWN else SourceType.DETERMINISTIC
-
-        // Save assistant message
+        // Save assistant message with the source resolved by the router
         val assistantMessage = Message(
             role = MessageRole.ASSISTANT,
             content = replyText,
-            sourceType = sourceType,
+            sourceType = result.sourceType,
             timestampMs = System.currentTimeMillis(),
             sessionId = sessionId,
         )
