@@ -28,6 +28,7 @@ retrofit = "3.0.0"
 
 # On-device AI (Beta — catalog only, not implemented until Phase 3)
 mlKitGenAi = "1.0.0-beta1"
+googleAi = "0.9.0"
 
 # Avatar animation (catalog only — active Phase 5)
 lottie = "6.7.1"
@@ -98,6 +99,7 @@ retrofit-kotlinx-serialization = { group = "com.squareup.retrofit2", name = "con
 
 # ML Kit GenAI (Beta — active Phase 3+)
 mlkit-genai-prompt = { group = "com.google.mlkit", name = "genai-prompt", version.ref = "mlKitGenAi" }
+google-ai-client = { group = "com.google.ai.client.generativeai", name = "generativeai", version.ref = "googleAi" }
 
 # Lottie (active Phase 5+)
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }

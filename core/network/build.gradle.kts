@@ -25,6 +25,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.kotlinx.serialization)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.google.ai.client)
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
