@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 03-01-PLAN.md
-last_updated: "2026-03-19T14:17:21.913Z"
+stopped_at: Completed 03-02-PLAN.md
+last_updated: "2026-03-19T20:06:40.891Z"
 progress:
   total_phases: 6
   completed_phases: 2
   total_plans: 20
-  completed_plans: 17
+  completed_plans: 18
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Voice commands, home control, and spoken replies must work offline — if that doesn't work, nothing else matters
-**Current focus:** Phase 02 — Voice + Home Control MVP
+**Current focus:** Phase 03 — ai-routing-privacy
 
 ## Current Position
 
-Phase: 02 (Voice + Home Control MVP) — EXECUTING
-Plan: 5 of 10
+Phase: 03 (ai-routing-privacy) — EXECUTING
+Plan: 1 of 4
 
 ## Performance Metrics
 
@@ -53,6 +53,7 @@ Plan: 5 of 10
 | Phase 02 P08 | 15m | 2 tasks | 7 files |
 | Phase 02 P09 | 15m | 2 tasks | 4 files |
 | Phase 02-voice-home-control-mvp P10 | 5m | 2 tasks | 1 files |
+| Phase 03 P02 | 7m | 3 tasks | 15 files |
 
 ## Accumulated Context
 
@@ -98,6 +99,9 @@ Recent decisions affecting current work:
 - [Phase 02]: SettingsViewModel observes configuration Flows and propagates changes to HaAuthInterceptor and BaseUrlInterceptor in real-time.
 - [Phase 02]: HA Access Token is masked using PasswordVisualTransformation with a show/hide toggle for security.
 - [Phase 02-voice-home-control-mvp]: Final integration uses BottomNavBar with 5 destinations for the MVP.
+- [Phase 03]: CloudAiService uses @Volatile var apiKey (not @Inject DataStore dependency) — mirrors HaAuthInterceptor.token pattern; keeps core:network free of core:data dependency
+- [Phase 03]: AiRouter.resolveIntent made suspend fun — required for async Gemini cloud call; all callers already in coroutine scope
+- [Phase 03]: ParsedIntent.CloudResponse sealed subtype added — cloud AI returns free-text not a typed QueryType; cleaner than overloading LocalQuery
 
 ### Pending Todos
 
@@ -112,6 +116,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T14:17:21.909Z
-Stopped at: Completed 03-01-PLAN.md
-Resume file: .planning/phases/03-ai-routing-privacy/03-01-SUMMARY.md
+Last session: 2026-03-19T20:06:40.889Z
+Stopped at: Completed 03-02-PLAN.md
+Resume file: None

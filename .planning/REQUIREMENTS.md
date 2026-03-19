@@ -44,9 +44,9 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 
 - [ ] **ROUT-01**: All assistant requests are routed through a central AI gateway (no direct LLM calls from UI)
 - [ ] **ROUT-02**: Deterministic command parser handles known home control, reminder, and routine intents without LLM
-- [ ] **ROUT-03**: Cloud AI handles open-ended reasoning and conversation when deterministic and local AI tiers cannot resolve the request
+- [x] **ROUT-03**: Cloud AI handles open-ended reasoning and conversation when deterministic and local AI tiers cannot resolve the request
 - [ ] **ROUT-04**: System degrades gracefully to reduced local mode when cloud AI is unavailable
-- [ ] **ROUT-05**: Every routing decision is observable (request class logged with each conversation message)
+- [x] **ROUT-05**: Every routing decision is observable (request class logged with each conversation message)
 
 ### Home Control
 
@@ -182,9 +182,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CONV-04 | Phase 2 | Complete |
 | ROUT-01 | Phase 3 | Pending |
 | ROUT-02 | Phase 3 | Pending |
-| ROUT-03 | Phase 3 | Pending |
+| ROUT-03 | Phase 3 | Complete |
 | ROUT-04 | Phase 3 | Pending |
-| ROUT-05 | Phase 3 | Pending |
+| ROUT-05 | Phase 3 | Complete |
 | HOME-01 | Phase 2 | Complete |
 | HOME-02 | Phase 2 | Complete |
 | HOME-03 | Phase 2 | Complete |
