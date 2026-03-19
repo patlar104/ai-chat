@@ -73,10 +73,12 @@ fun MessageBubble(message: Message, modifier: Modifier = Modifier) {
                 Spacer(Modifier.height(Spacing.xs))
                 val chipLabel = when (message.sourceType) {
                     SourceType.DETERMINISTIC -> "deterministic"
+                    SourceType.CLOUD -> "cloud"
                     SourceType.UNKNOWN -> "unknown"
                 }
                 val chipBorderColor = when (message.sourceType) {
                     SourceType.DETERMINISTIC -> AppColors.Primary
+                    SourceType.CLOUD -> AppColors.Primary
                     SourceType.UNKNOWN -> AppColors.OnSurfaceVariant
                 }
                 SuggestionChip(

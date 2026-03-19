@@ -175,6 +175,7 @@ class VoiceViewModel @Inject constructor(
             is ParsedIntent.Routine -> executeRoutine(intent)
             is ParsedIntent.CreateReminder -> executeCreateReminder(intent)
             is ParsedIntent.LocalQuery -> executeLocalQuery(intent)
+            is ParsedIntent.CloudResponse -> intent.text
             is ParsedIntent.Unknown -> "Sorry, I didn't understand that. I can control devices, set reminders, and execute routines."
         }
 

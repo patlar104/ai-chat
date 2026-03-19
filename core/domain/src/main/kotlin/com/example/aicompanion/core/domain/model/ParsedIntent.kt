@@ -15,6 +15,7 @@ sealed interface ParsedIntent {
     ) : ParsedIntent
 
     data class LocalQuery(val queryType: QueryType) : ParsedIntent
+    data class CloudResponse(val text: String) : ParsedIntent
     data object Unknown : ParsedIntent
 }
 
