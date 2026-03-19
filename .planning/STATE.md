@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 02-01-PLAN.md
-last_updated: "2026-03-19T00:19:52.350Z"
+stopped_at: Completed 02-02-PLAN.md
+last_updated: "2026-03-19T00:20:03.304Z"
 progress:
   total_phases: 6
   completed_phases: 1
@@ -47,6 +47,7 @@ Plan: 2 of 10
 
 *Updated after each plan completion*
 | Phase 01 P03 | 1 | 2 tasks | 3 files |
+| Phase 02 P02 | 2m | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -75,6 +76,8 @@ Recent decisions affecting current work:
 - [02-01]: Repository interfaces use Flow for reactive streams and suspend for one-shot operations
 - [02-01]: HomeAssistantRepository returns kotlin.Result<Unit> — no checked exceptions, callers use onSuccess/onFailure
 - [02-01]: Dispatcher qualifiers use AnnotationRetention.BINARY — @MainDispatcher and @IoDispatcher via Hilt SingletonComponent
+- [Phase 02]: AppNavHost navController changed to required param — MainActivity owns shared NavController instance for BottomNavBar and AppNavHost
+- [Phase 02]: material-icons-extended added to version catalog as compose-bom-managed dependency (no explicit version)
 
 ### Pending Todos
 
@@ -89,6 +92,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T00:18:30Z
-Stopped at: Completed 02-01-PLAN.md
-Resume file: .planning/phases/02-voice-home-control-mvp/02-02-PLAN.md
+Last session: 2026-03-19T00:20:03.302Z
+Stopped at: Completed 02-02-PLAN.md
+Resume file: None
