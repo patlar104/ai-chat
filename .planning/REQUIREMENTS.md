@@ -35,8 +35,8 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 
 ### Conversation & Chat
 
-- [ ] **CONV-01**: Conversation history persists across app restarts in Room
-- [ ] **CONV-02**: Conversation history is viewable in a scrollable chat timeline UI showing both user and assistant turns
+- [x] **CONV-01**: Conversation history persists across app restarts in Room
+- [x] **CONV-02**: Conversation history is viewable in a scrollable chat timeline UI showing both user and assistant turns
 - [x] **CONV-03**: Each conversation message records role, content, source type (deterministic/local-AI/cloud), and timestamp
 - [x] **CONV-04**: Short-term in-session context enables multi-turn references (e.g., "turn it up" after mentioning a device)
 
@@ -53,7 +53,7 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 - [x] **HOME-01**: User can control named smart-home devices by voice command (on/off, brightness, temperature)
 - [x] **HOME-02**: User can execute named routines by voice command or alias
 - [x] **HOME-03**: Device and room alias map translates spoken names to Home Assistant entity IDs
-- [ ] **HOME-04**: User can add, edit, and delete device and room aliases
+- [x] **HOME-04**: User can add, edit, and delete device and room aliases
 - [x] **HOME-05**: Assistant speaks a confirmation after each home control action
 - [x] **HOME-06**: Each tool invocation (device command, routine) is recorded in an audit log viewable by the user
 - [x] **HOME-07**: Failed tool invocations surface a plain-language explanation to the user
@@ -176,8 +176,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TTS-01 | Phase 2 | Complete |
 | TTS-02 | Phase 2 | Complete |
 | TTS-03 | Phase 2 | Complete |
-| CONV-01 | Phase 2 | Pending |
-| CONV-02 | Phase 2 | Pending |
+| CONV-01 | Phase 2 | Complete |
+| CONV-02 | Phase 2 | Complete |
 | CONV-03 | Phase 2 | Complete |
 | CONV-04 | Phase 2 | Complete |
 | ROUT-01 | Phase 3 | Pending |
@@ -188,7 +188,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | HOME-01 | Phase 2 | Complete |
 | HOME-02 | Phase 2 | Complete |
 | HOME-03 | Phase 2 | Complete |
-| HOME-04 | Phase 2 | Pending |
+| HOME-04 | Phase 2 | Complete |
 | HOME-05 | Phase 2 | Complete |
 | HOME-06 | Phase 2 | Complete |
 | HOME-07 | Phase 2 | Complete |
