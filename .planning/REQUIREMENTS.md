@@ -45,7 +45,7 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 - [ ] **ROUT-01**: All assistant requests are routed through a central AI gateway (no direct LLM calls from UI)
 - [ ] **ROUT-02**: Deterministic command parser handles known home control, reminder, and routine intents without LLM
 - [x] **ROUT-03**: Cloud AI handles open-ended reasoning and conversation when deterministic and local AI tiers cannot resolve the request
-- [ ] **ROUT-04**: System degrades gracefully to reduced local mode when cloud AI is unavailable
+- [x] **ROUT-04**: System degrades gracefully to reduced local mode when cloud AI is unavailable
 - [x] **ROUT-05**: Every routing decision is observable (request class logged with each conversation message)
 
 ### Home Control
@@ -91,10 +91,10 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 
 - [x] **PRIV-01**: Privacy mode toggle prevents all cloud AI and cloud TTS requests when enabled
 - [x] **PRIV-02**: Privacy mode state is enforced in a network interceptor — not just in the UI
-- [ ] **PRIV-03**: Privacy mode active state is visually indicated in the UI
-- [ ] **PRIV-04**: Core commands (home control for local HA, reminders, task capture) work without network in offline mode
-- [ ] **PRIV-05**: Local TTS provides spoken feedback in offline mode
-- [ ] **PRIV-06**: Offline degraded mode is clearly communicated to the user when relevant
+- [x] **PRIV-03**: Privacy mode active state is visually indicated in the UI
+- [x] **PRIV-04**: Core commands (home control for local HA, reminders, task capture) work without network in offline mode
+- [x] **PRIV-05**: Local TTS provides spoken feedback in offline mode
+- [x] **PRIV-06**: Offline degraded mode is clearly communicated to the user when relevant
 
 ### Settings
 
@@ -183,7 +183,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ROUT-01 | Phase 3 | Pending |
 | ROUT-02 | Phase 3 | Pending |
 | ROUT-03 | Phase 3 | Complete |
-| ROUT-04 | Phase 3 | Pending |
+| ROUT-04 | Phase 3 | Complete |
 | ROUT-05 | Phase 3 | Complete |
 | HOME-01 | Phase 2 | Complete |
 | HOME-02 | Phase 2 | Complete |
@@ -211,10 +211,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MEMO-06 | Phase 4 | Pending |
 | PRIV-01 | Phase 3 | Complete |
 | PRIV-02 | Phase 3 | Complete |
-| PRIV-03 | Phase 3 | Pending |
-| PRIV-04 | Phase 3 | Pending |
-| PRIV-05 | Phase 3 | Pending |
-| PRIV-06 | Phase 3 | Pending |
+| PRIV-03 | Phase 3 | Complete |
+| PRIV-04 | Phase 3 | Complete |
+| PRIV-05 | Phase 3 | Complete |
+| PRIV-06 | Phase 3 | Complete |
 | SETT-01 | Phase 2 | Complete |
 | SETT-02 | Phase 2 | Complete |
 | SETT-03 | Phase 2 | Complete |

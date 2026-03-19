@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Scaffold** - Compilable 15-module Android project with enforced dependency rules, Hilt DI, navigation host, CI, and baseline conventions
 - [ ] **Phase 2: Voice + Home Control MVP** - Button-to-talk voice loop, TTS confirmation, persistent conversation history, Home Assistant device control, reminders, and settings
-- [ ] **Phase 3: AI Routing + Privacy** - Hybrid AI router (deterministic → cloud), privacy mode enforced at network interceptor, offline degraded mode
+- [x] **Phase 3: AI Routing + Privacy** - Hybrid AI router (deterministic → cloud), privacy mode enforced at network interceptor, offline degraded mode (completed 2026-03-19)
 - [ ] **Phase 4: Background Ops + Memory** - WorkManager briefings and automations, persistent user memory with explicit review and delete controls
 - [ ] **Phase 5: Avatar** - Expressive 2D avatar with voice-state-driven animation, decoupled from TTS pipeline for zero performance impact
 - [ ] **Phase 6: Hardening & Release** - Full offline path validation, security audit, performance profiling, audit log completeness, and v1 release readiness
@@ -127,7 +127,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 |-------|----------------|--------|-----------|
 | 1. Foundation & Scaffold | 6/6 | Complete ✓ | 2026-03-18 |
 | 2. Voice + Home Control MVP | 7/10 | In Progress|  |
-| 3. AI Routing + Privacy | 3/4 | In Progress|  |
+| 3. AI Routing + Privacy | 4/4 | Complete   | 2026-03-19 |
 | 4. Background Ops + Memory | 0/TBD | Not started | - |
 | 5. Avatar | 0/TBD | Not started | - |
 | 6. Hardening & Release | 0/TBD | Not started | - |

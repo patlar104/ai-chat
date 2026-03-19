@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 03-03-PLAN.md
-last_updated: "2026-03-19T20:10:24.754Z"
+stopped_at: Completed 03-04-PLAN.md
+last_updated: "2026-03-19T20:18:08.145Z"
 progress:
   total_phases: 6
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 20
-  completed_plans: 19
+  completed_plans: 20
 ---
 
 # Project State
@@ -55,6 +55,7 @@ Plan: 1 of 4
 | Phase 02-voice-home-control-mvp P10 | 5m | 2 tasks | 1 files |
 | Phase 03 P02 | 7m | 3 tasks | 15 files |
 | Phase 03 P03 | 2m | 2 tasks | 2 files |
+| Phase 03 P04 | 4m | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -105,6 +106,9 @@ Recent decisions affecting current work:
 - [Phase 03]: ParsedIntent.CloudResponse sealed subtype added — cloud AI returns free-text not a typed QueryType; cleaner than overloading LocalQuery
 - [Phase 03]: PrivacyInterceptor uses @Volatile privacyModeEnabled field — keeps core:network free of core:data dependency, mirrors HaAuthInterceptor.token pattern
 - [Phase 03]: PrivacyInterceptor added as first application interceptor — cloud AI requests blocked before HA auth or base URL interceptors modify them
+- [Phase 03]: AiRouterImpl checks privacyInterceptor.privacyModeEnabled before cloud call — spoken degraded message returned as CloudResponse
+- [Phase 03]: Offline vs no-key distinction in AiRouterImpl: apiKey==null returns Unknown (silent); apiKey set + cloud null returns Offline degraded message
+- [Phase 03]: VoiceViewModel uses ConnectivityManager NetworkCallback for live isOnline tracking; unregistered in onCleared to prevent leaks
 
 ### Pending Todos
 
@@ -119,6 +123,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T20:10:24.751Z
-Stopped at: Completed 03-03-PLAN.md
+Last session: 2026-03-19T20:18:08.143Z
+Stopped at: Completed 03-04-PLAN.md
 Resume file: None
