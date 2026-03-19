@@ -21,7 +21,7 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 ### Voice Shell
 
 - [ ] **VOIC-01**: User can initiate a voice session by pressing a button (button-to-talk)
-- [ ] **VOIC-02**: Assistant visual state reflects Idle, Listening, Transcribing, Processing, Speaking, and Error states
+- [x] **VOIC-02**: Assistant visual state reflects Idle, Listening, Transcribing, Processing, Speaking, and Error states
 - [ ] **VOIC-03**: User speech is captured via Android SpeechRecognizer and transcribed to text
 - [ ] **VOIC-04**: Voice session runs in a foreground service with correct foreground service type declared in manifest
 - [ ] **VOIC-05**: Audio focus is requested and abandoned correctly across the voice session lifecycle
@@ -37,8 +37,8 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 
 - [ ] **CONV-01**: Conversation history persists across app restarts in Room
 - [ ] **CONV-02**: Conversation history is viewable in a scrollable chat timeline UI showing both user and assistant turns
-- [ ] **CONV-03**: Each conversation message records role, content, source type (deterministic/local-AI/cloud), and timestamp
-- [ ] **CONV-04**: Short-term in-session context enables multi-turn references (e.g., "turn it up" after mentioning a device)
+- [x] **CONV-03**: Each conversation message records role, content, source type (deterministic/local-AI/cloud), and timestamp
+- [x] **CONV-04**: Short-term in-session context enables multi-turn references (e.g., "turn it up" after mentioning a device)
 
 ### AI Routing
 
@@ -52,15 +52,15 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 
 - [ ] **HOME-01**: User can control named smart-home devices by voice command (on/off, brightness, temperature)
 - [ ] **HOME-02**: User can execute named routines by voice command or alias
-- [ ] **HOME-03**: Device and room alias map translates spoken names to Home Assistant entity IDs
+- [x] **HOME-03**: Device and room alias map translates spoken names to Home Assistant entity IDs
 - [ ] **HOME-04**: User can add, edit, and delete device and room aliases
 - [ ] **HOME-05**: Assistant speaks a confirmation after each home control action
-- [ ] **HOME-06**: Each tool invocation (device command, routine) is recorded in an audit log viewable by the user
+- [x] **HOME-06**: Each tool invocation (device command, routine) is recorded in an audit log viewable by the user
 - [ ] **HOME-07**: Failed tool invocations surface a plain-language explanation to the user
 
 ### Tasks & Reminders
 
-- [ ] **TASK-01**: User can create a reminder by voice command with a specified time or description
+- [x] **TASK-01**: User can create a reminder by voice command with a specified time or description
 - [ ] **TASK-02**: Reminders trigger a system notification at the scheduled time
 - [ ] **TASK-03**: User can view a list of pending reminders in the Tasks screen
 - [ ] **TASK-04**: User can cancel or delete a pending reminder
@@ -168,7 +168,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SCAF-05 | Phase 1 | Pending |
 | SCAF-06 | Phase 1 | Complete |
 | VOIC-01 | Phase 2 | Pending |
-| VOIC-02 | Phase 2 | Pending |
+| VOIC-02 | Phase 2 | Complete |
 | VOIC-03 | Phase 2 | Pending |
 | VOIC-04 | Phase 2 | Pending |
 | VOIC-05 | Phase 2 | Pending |
@@ -178,8 +178,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TTS-03 | Phase 2 | Pending |
 | CONV-01 | Phase 2 | Pending |
 | CONV-02 | Phase 2 | Pending |
-| CONV-03 | Phase 2 | Pending |
-| CONV-04 | Phase 2 | Pending |
+| CONV-03 | Phase 2 | Complete |
+| CONV-04 | Phase 2 | Complete |
 | ROUT-01 | Phase 3 | Pending |
 | ROUT-02 | Phase 3 | Pending |
 | ROUT-03 | Phase 3 | Pending |
@@ -187,12 +187,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ROUT-05 | Phase 3 | Pending |
 | HOME-01 | Phase 2 | Pending |
 | HOME-02 | Phase 2 | Pending |
-| HOME-03 | Phase 2 | Pending |
+| HOME-03 | Phase 2 | Complete |
 | HOME-04 | Phase 2 | Pending |
 | HOME-05 | Phase 2 | Pending |
-| HOME-06 | Phase 2 | Pending |
+| HOME-06 | Phase 2 | Complete |
 | HOME-07 | Phase 2 | Pending |
-| TASK-01 | Phase 2 | Pending |
+| TASK-01 | Phase 2 | Complete |
 | TASK-02 | Phase 2 | Pending |
 | TASK-03 | Phase 2 | Pending |
 | TASK-04 | Phase 2 | Pending |

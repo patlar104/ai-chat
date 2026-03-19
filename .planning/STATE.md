@@ -2,16 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: completed
-stopped_at: Phase 2 context gathered
-last_updated: "2026-03-18T23:23:58.142Z"
-last_activity: "2026-03-18 — Plan 01-06 complete: AppError + Logger baseline"
+status: unknown
+stopped_at: Completed 02-01-PLAN.md
+last_updated: "2026-03-19T00:19:52.350Z"
 progress:
   total_phases: 6
   completed_phases: 1
-  total_plans: 6
-  completed_plans: 6
-  percent: 17
+  total_plans: 16
+  completed_plans: 8
 ---
 
 # Project State
@@ -21,16 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-18)
 
 **Core value:** Voice commands, home control, and spoken replies must work offline — if that doesn't work, nothing else matters
-**Current focus:** Phase 2 — Voice + Home Control MVP (next)
+**Current focus:** Phase 02 — Voice + Home Control MVP
 
 ## Current Position
 
-Phase: 1 of 6 (Foundation & Scaffold) — COMPLETE
-Plan: 6 of 6 in current phase — ALL PLANS COMPLETE
-Status: Phase 1 complete — ready for Phase 2
-Last activity: 2026-03-18 — Plan 01-06 complete: AppError + Logger baseline
-
-Progress: [██░░░░░░░░] 17%
+Phase: 02 (Voice + Home Control MVP) — EXECUTING
+Plan: 2 of 10
 
 ## Performance Metrics
 
@@ -77,6 +71,10 @@ Recent decisions affecting current work:
 - [01-06]: AppModule uses abstract class (not object) — required for @Binds in Hilt; object cannot have abstract members
 - [01-06]: Logger interface placed in :core:domain with no Timber import — keeps domain layer pure Kotlin and testable without Android dependencies
 - [01-06]: TimberLogger lives in :app — Timber dependency is only declared in app/build.gradle.kts
+- [02-01]: Domain models are pure Kotlin — zero android.* imports ensure testability without Android SDK
+- [02-01]: Repository interfaces use Flow for reactive streams and suspend for one-shot operations
+- [02-01]: HomeAssistantRepository returns kotlin.Result<Unit> — no checked exceptions, callers use onSuccess/onFailure
+- [02-01]: Dispatcher qualifiers use AnnotationRetention.BINARY — @MainDispatcher and @IoDispatcher via Hilt SingletonComponent
 
 ### Pending Todos
 
@@ -91,6 +89,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-18T23:23:58.132Z
-Stopped at: Phase 2 context gathered
-Resume file: .planning/phases/02-voice-home-control-mvp/02-CONTEXT.md
+Last session: 2026-03-19T00:18:30Z
+Stopped at: Completed 02-01-PLAN.md
+Resume file: .planning/phases/02-voice-home-control-mvp/02-02-PLAN.md
