@@ -5,6 +5,7 @@ import com.example.aicompanion.core.network.ai.CloudAiService
 import com.example.aicompanion.core.network.ha.BaseUrlInterceptor
 import com.example.aicompanion.core.network.ha.HaAuthInterceptor
 import com.example.aicompanion.core.network.ha.HomeAssistantService
+import com.example.aicompanion.core.network.privacy.PrivacyInterceptor
 import com.example.aicompanion.core.network.repository.HomeAssistantRepositoryImpl
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Binds
@@ -38,10 +39,16 @@ abstract class NetworkModule {
 
         @Provides
         @Singleton
+        fun providePrivacyInterceptor(): PrivacyInterceptor = PrivacyInterceptor()
+
+        @Provides
+        @Singleton
         fun provideOkHttpClient(
             authInterceptor: HaAuthInterceptor,
             baseUrlInterceptor: BaseUrlInterceptor,
+            privacyInterceptor: PrivacyInterceptor,
         ): OkHttpClient = OkHttpClient.Builder()
+            .addInterceptor(privacyInterceptor)
             .addInterceptor(baseUrlInterceptor)
             .addInterceptor(authInterceptor)
             .addInterceptor(HttpLoggingInterceptor().apply {
