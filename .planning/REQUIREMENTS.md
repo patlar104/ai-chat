@@ -20,18 +20,18 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 
 ### Voice Shell
 
-- [ ] **VOIC-01**: User can initiate a voice session by pressing a button (button-to-talk)
+- [x] **VOIC-01**: User can initiate a voice session by pressing a button (button-to-talk)
 - [x] **VOIC-02**: Assistant visual state reflects Idle, Listening, Transcribing, Processing, Speaking, and Error states
-- [ ] **VOIC-03**: User speech is captured via Android SpeechRecognizer and transcribed to text
+- [x] **VOIC-03**: User speech is captured via Android SpeechRecognizer and transcribed to text
 - [x] **VOIC-04**: Voice session runs in a foreground service with correct foreground service type declared in manifest
-- [ ] **VOIC-05**: Audio focus is requested and abandoned correctly across the voice session lifecycle
-- [ ] **VOIC-06**: User can interrupt or stop an in-progress assistant reply
+- [x] **VOIC-05**: Audio focus is requested and abandoned correctly across the voice session lifecycle
+- [x] **VOIC-06**: User can interrupt or stop an in-progress assistant reply
 
 ### Text-to-Speech
 
-- [ ] **TTS-01**: Assistant replies are spoken aloud via Android TextToSpeech (local baseline)
-- [ ] **TTS-02**: Short utility confirmations ("Done, turning off the lights") use local TTS for speed
-- [ ] **TTS-03**: TTS state (speaking/idle) is observable so avatar and UI can react to it
+- [x] **TTS-01**: Assistant replies are spoken aloud via Android TextToSpeech (local baseline)
+- [x] **TTS-02**: Short utility confirmations ("Done, turning off the lights") use local TTS for speed
+- [x] **TTS-03**: TTS state (speaking/idle) is observable so avatar and UI can react to it
 
 ### Conversation & Chat
 
@@ -167,15 +167,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SCAF-04 | Phase 1 | Pending |
 | SCAF-05 | Phase 1 | Pending |
 | SCAF-06 | Phase 1 | Complete |
-| VOIC-01 | Phase 2 | Pending |
+| VOIC-01 | Phase 2 | Complete |
 | VOIC-02 | Phase 2 | Complete |
-| VOIC-03 | Phase 2 | Pending |
+| VOIC-03 | Phase 2 | Complete |
 | VOIC-04 | Phase 2 | Complete |
-| VOIC-05 | Phase 2 | Pending |
-| VOIC-06 | Phase 2 | Pending |
-| TTS-01 | Phase 2 | Pending |
-| TTS-02 | Phase 2 | Pending |
-| TTS-03 | Phase 2 | Pending |
+| VOIC-05 | Phase 2 | Complete |
+| VOIC-06 | Phase 2 | Complete |
+| TTS-01 | Phase 2 | Complete |
+| TTS-02 | Phase 2 | Complete |
+| TTS-03 | Phase 2 | Complete |
 | CONV-01 | Phase 2 | Pending |
 | CONV-02 | Phase 2 | Pending |
 | CONV-03 | Phase 2 | Complete |
