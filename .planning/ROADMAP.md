@@ -120,7 +120,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Scaffold | 6/6 | Complete ✓ | 2026-03-18 |
-| 2. Voice + Home Control MVP | 3/10 | In Progress|  |
+| 2. Voice + Home Control MVP | 5/10 | In Progress|  |
 | 3. AI Routing + Privacy | 0/TBD | Not started | - |
 | 4. Background Ops + Memory | 0/TBD | Not started | - |
 | 5. Avatar | 0/TBD | Not started | - |

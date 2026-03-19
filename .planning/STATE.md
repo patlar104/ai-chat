@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 02-04-PLAN.md
-last_updated: "2026-03-19T13:03:36.176Z"
+stopped_at: Completed 02-05-PLAN.md
+last_updated: "2026-03-19T13:22:35Z"
 progress:
   total_phases: 6
   completed_phases: 1
@@ -24,7 +24,7 @@ See: .planning/PROJECT.md (updated 2026-03-18)
 ## Current Position
 
 Phase: 02 (Voice + Home Control MVP) — EXECUTING
-Plan: 2 of 10
+Plan: 5 of 10
 
 ## Performance Metrics
 
@@ -48,7 +48,6 @@ Plan: 2 of 10
 *Updated after each plan completion*
 | Phase 01 P03 | 1 | 2 tasks | 3 files |
 | Phase 02 P02 | 2m | 2 tasks | 8 files |
-| Phase 02 P04 | 12 | 2 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -79,8 +78,10 @@ Recent decisions affecting current work:
 - [02-01]: Dispatcher qualifiers use AnnotationRetention.BINARY — @MainDispatcher and @IoDispatcher via Hilt SingletonComponent
 - [Phase 02]: AppNavHost navController changed to required param — MainActivity owns shared NavController instance for BottomNavBar and AppNavHost
 - [Phase 02]: material-icons-extended added to version catalog as compose-bom-managed dependency (no explicit version)
-- [Phase 02-04]: SpeechRecognizerManager uses withContext(mainDispatcher) on every API call — enforces Looper.getMainLooper() assertion at runtime
-- [Phase 02-04]: AudioModule stays as empty object — all 3 audio managers auto-provisioned via Hilt @Inject constructor + @Singleton without explicit @Provides
+- [02-05]: @Volatile fields on HaAuthInterceptor/BaseUrlInterceptor — updated from DataStore Flow without blocking OkHttp thread
+- [02-05]: NetworkModule changed from object to abstract class — required for Hilt @Binds support
+- [02-05]: TURN_OFF matched before TURN_ON in CommandParser — prevents greedy trailing-on match false positives
+- [02-05]: Brightness converted from % (0-100) to HA int (0-255) at parse time, not at HA call time
 
 ### Pending Todos
 
@@ -95,6 +96,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T13:03:36.173Z
-Stopped at: Completed 02-04-PLAN.md
+Last session: 2026-03-19T13:22:35Z
+Stopped at: Completed 02-05-PLAN.md
 Resume file: None
