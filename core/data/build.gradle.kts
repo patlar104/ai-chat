@@ -17,9 +17,25 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:domain"))
+
+    // Room
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler)
+
+    // DataStore
+    implementation(libs.datastore.preferences)
+
+    // Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+
+    // Coroutines
     implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
+
+    // Testing
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.coroutines.test)
