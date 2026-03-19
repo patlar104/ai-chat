@@ -36,6 +36,7 @@ class SettingsRepositoryImpl @Inject constructor(
     override val ttsVoiceName: Flow<String?> = appPreferences.ttsVoiceName
     override val privacyModeEnabled: Flow<Boolean> = appPreferences.privacyModeEnabled
     override val backgroundAutomationEnabled: Flow<Boolean> = appPreferences.backgroundAutomationEnabled
+    override val googleAiApiKey: Flow<String?> = appPreferences.googleAiApiKey
 
     override suspend fun setHaServerUrl(url: String) = appPreferences.setHaServerUrl(url)
 
@@ -48,4 +49,6 @@ class SettingsRepositoryImpl @Inject constructor(
     override suspend fun setTtsVoiceName(name: String) = appPreferences.setTtsVoiceName(name)
     override suspend fun setPrivacyModeEnabled(enabled: Boolean) = appPreferences.setPrivacyModeEnabled(enabled)
     override suspend fun setBackgroundAutomationEnabled(enabled: Boolean) = appPreferences.setBackgroundAutomationEnabled(enabled)
+    override suspend fun setGoogleAiApiKey(key: String) = appPreferences.setGoogleAiApiKey(key)
+    override suspend fun clearGoogleAiApiKey() = appPreferences.clearGoogleAiApiKey()
 }

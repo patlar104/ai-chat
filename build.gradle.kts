@@ -15,18 +15,19 @@ plugins {
 // Violation causes an immediate build configuration failure.
 subprojects {
     val currentPath = path
-    afterEvaluate {
-        if (currentPath.startsWith(":feature:")) {
+    if (currentPath.startsWith(":feature:")) {
+        afterEvaluate {
             configurations.configureEach {
-                withDependencies {
-                    forEach { dep ->
-                        if (dep is ProjectDependency) {
-                            val depPath = dep.dependencyProject.path
-                            check(!depPath.startsWith(":feature:")) {
+                if (name.contains("Implementation", ignoreCase = true)) {
+                    dependencies.withType(org.gradle.api.artifacts.ProjectDependency::class.java).configureEach {
+                        // In Gradle 9, use path property directly on ProjectDependency
+                        val depPath = this.path
+                        if (depPath.startsWith(":feature:")) {
+                            throw GradleException(
                                 "Dependency violation: $currentPath -> $depPath is BANNED. " +
                                 "Feature modules may only depend on :core:* modules. " +
                                 "Move shared types to :core:domain."
-                            }
+                            )
                         }
                     }
                 }

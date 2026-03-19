@@ -26,6 +26,7 @@ class AppPreferences @Inject constructor(
         val TTS_VOICE_NAME = stringPreferencesKey("tts_voice_name")
         val PRIVACY_MODE = booleanPreferencesKey("privacy_mode_enabled")
         val BACKGROUND_AUTOMATION = booleanPreferencesKey("background_automation_enabled")
+        val GOOGLE_AI_API_KEY = stringPreferencesKey("google_ai_api_key")
     }
 
     val haServerUrl: Flow<String> = context.dataStore.data.map { it[Keys.HA_SERVER_URL] ?: "" }
@@ -34,6 +35,7 @@ class AppPreferences @Inject constructor(
     val ttsVoiceName: Flow<String?> = context.dataStore.data.map { it[Keys.TTS_VOICE_NAME] }
     val privacyModeEnabled: Flow<Boolean> = context.dataStore.data.map { it[Keys.PRIVACY_MODE] ?: false }
     val backgroundAutomationEnabled: Flow<Boolean> = context.dataStore.data.map { it[Keys.BACKGROUND_AUTOMATION] ?: true }
+    val googleAiApiKey: Flow<String?> = context.dataStore.data.map { it[Keys.GOOGLE_AI_API_KEY] }
 
     suspend fun setHaServerUrl(url: String) { context.dataStore.edit { it[Keys.HA_SERVER_URL] = url } }
     suspend fun setHaTokenEncrypted(ciphertext: String, iv: String) {
@@ -51,4 +53,6 @@ class AppPreferences @Inject constructor(
     suspend fun setTtsVoiceName(name: String) { context.dataStore.edit { it[Keys.TTS_VOICE_NAME] = name } }
     suspend fun setPrivacyModeEnabled(enabled: Boolean) { context.dataStore.edit { it[Keys.PRIVACY_MODE] = enabled } }
     suspend fun setBackgroundAutomationEnabled(enabled: Boolean) { context.dataStore.edit { it[Keys.BACKGROUND_AUTOMATION] = enabled } }
+    suspend fun setGoogleAiApiKey(key: String) { context.dataStore.edit { it[Keys.GOOGLE_AI_API_KEY] = key } }
+    suspend fun clearGoogleAiApiKey() { context.dataStore.edit { it.remove(Keys.GOOGLE_AI_API_KEY) } }
 }

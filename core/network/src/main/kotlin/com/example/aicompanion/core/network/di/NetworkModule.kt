@@ -1,6 +1,7 @@
 package com.example.aicompanion.core.network.di
 
 import com.example.aicompanion.core.domain.repository.HomeAssistantRepository
+import com.example.aicompanion.core.network.ai.CloudAiService
 import com.example.aicompanion.core.network.ha.BaseUrlInterceptor
 import com.example.aicompanion.core.network.ha.HaAuthInterceptor
 import com.example.aicompanion.core.network.ha.HomeAssistantService
@@ -65,5 +66,9 @@ abstract class NetworkModule {
         @Singleton
         fun provideHomeAssistantService(retrofit: Retrofit): HomeAssistantService =
             retrofit.create(HomeAssistantService::class.java)
+
+        @Provides
+        @Singleton
+        fun provideCloudAiService(): CloudAiService = CloudAiService()
     }
 }

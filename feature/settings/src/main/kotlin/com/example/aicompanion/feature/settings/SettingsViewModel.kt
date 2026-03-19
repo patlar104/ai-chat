@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.aicompanion.core.audio.tts.TextToSpeechManager
 import com.example.aicompanion.core.domain.repository.SettingsRepository
+import com.example.aicompanion.core.network.ai.CloudAiService
 import com.example.aicompanion.core.network.ha.BaseUrlInterceptor
 import com.example.aicompanion.core.network.ha.HaAuthInterceptor
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,6 +21,7 @@ class SettingsViewModel @Inject constructor(
     private val ttsManager: TextToSpeechManager,
     private val haAuthInterceptor: HaAuthInterceptor,
     private val baseUrlInterceptor: BaseUrlInterceptor,
+    private val cloudAiService: CloudAiService,
 ) : ViewModel() {
 
     val haServerUrl = settingsRepository.haServerUrl
@@ -38,10 +40,14 @@ class SettingsViewModel @Inject constructor(
     val backgroundAutomationEnabled = settingsRepository.backgroundAutomationEnabled
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), true)
 
+    val googleAiApiKeyPresent = settingsRepository.googleAiApiKey
+        .map { it != null }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
+
     val availableVoices: List<String>
         get() = ttsManager.getAvailableVoices().map { it.name }
 
-    // Keep interceptors updated with current settings
+    // Keep interceptors and services updated with current settings
     init {
         viewModelScope.launch {
             settingsRepository.haServerUrl.collect { url ->
@@ -53,6 +59,11 @@ class SettingsViewModel @Inject constructor(
         viewModelScope.launch {
             settingsRepository.haAccessToken.collect { token ->
                 haAuthInterceptor.token = token
+            }
+        }
+        viewModelScope.launch {
+            settingsRepository.googleAiApiKey.collect { key ->
+                cloudAiService.apiKey = key
             }
         }
     }
@@ -82,5 +93,13 @@ class SettingsViewModel @Inject constructor(
 
     fun setBackgroundAutomation(enabled: Boolean) {
         viewModelScope.launch { settingsRepository.setBackgroundAutomationEnabled(enabled) }
+    }
+
+    fun saveGoogleAiApiKey(key: String) {
+        viewModelScope.launch { settingsRepository.setGoogleAiApiKey(key) }
+    }
+
+    fun clearGoogleAiApiKey() {
+        viewModelScope.launch { settingsRepository.clearGoogleAiApiKey() }
     }
 }
