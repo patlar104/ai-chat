@@ -7,6 +7,10 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 object AudioModule {
-    // Placeholder — SpeechRecognizer and TextToSpeech bindings added in Phase 2+
-    // CRITICAL: SpeechRecognizer must be created on the main thread (Phase 2 constraint)
+    // SpeechRecognizerManager, TextToSpeechManager, and AudioFocusManager
+    // all use @Inject constructor() — Hilt constructs them automatically.
+    // No explicit @Provides needed for these classes.
+    //
+    // This module exists as an extension point for future @Provides
+    // (e.g., providing a custom RecognitionService or TTS engine).
 }
