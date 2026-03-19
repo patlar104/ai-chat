@@ -7,6 +7,7 @@ import com.example.aicompanion.core.domain.repository.SettingsRepository
 import com.example.aicompanion.core.network.ai.CloudAiService
 import com.example.aicompanion.core.network.ha.BaseUrlInterceptor
 import com.example.aicompanion.core.network.ha.HaAuthInterceptor
+import com.example.aicompanion.core.network.privacy.PrivacyInterceptor
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
@@ -22,6 +23,7 @@ class SettingsViewModel @Inject constructor(
     private val haAuthInterceptor: HaAuthInterceptor,
     private val baseUrlInterceptor: BaseUrlInterceptor,
     private val cloudAiService: CloudAiService,
+    private val privacyInterceptor: PrivacyInterceptor,
 ) : ViewModel() {
 
     val haServerUrl = settingsRepository.haServerUrl
@@ -64,6 +66,11 @@ class SettingsViewModel @Inject constructor(
         viewModelScope.launch {
             settingsRepository.googleAiApiKey.collect { key ->
                 cloudAiService.apiKey = key
+            }
+        }
+        viewModelScope.launch {
+            settingsRepository.privacyModeEnabled.collect { enabled ->
+                privacyInterceptor.privacyModeEnabled = enabled
             }
         }
     }
