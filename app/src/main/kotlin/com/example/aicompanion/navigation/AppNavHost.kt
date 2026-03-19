@@ -1,10 +1,10 @@
 package com.example.aicompanion.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.example.aicompanion.feature.avatar.AVATAR_ROUTE
 import com.example.aicompanion.feature.avatar.AvatarScreen
 import com.example.aicompanion.feature.chat.CHAT_ROUTE
@@ -22,11 +22,13 @@ import com.example.aicompanion.feature.voice.VoiceScreen
 
 @Composable
 fun AppNavHost(
-    navController: NavHostController = rememberNavController(),
+    navController: NavHostController,
+    modifier: Modifier = Modifier,
 ) {
     NavHost(
         navController = navController,
         startDestination = VOICE_ROUTE,
+        modifier = modifier,
     ) {
         composable(VOICE_ROUTE) { VoiceScreen() }
         composable(CHAT_ROUTE) { ChatScreen() }
