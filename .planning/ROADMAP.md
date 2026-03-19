@@ -51,7 +51,19 @@ Plans:
   3. User says "remind me to take my medication at 8 PM" and receives a system notification at the scheduled time
   4. User scrolls back through a chat timeline showing all past voice exchanges, including what tier handled each command
   5. User opens Settings and configures the Home Assistant URL, access token, TTS voice, privacy mode, and background automation toggle
-**Plans**: TBD
+**Plans**: 10 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Domain models + contracts: VoiceState, ParsedIntent, Message, AuditLogEntry, Alias, Reminder models; repository interfaces; dispatcher qualifiers
+- [ ] 02-02-PLAN.md — Theme + design system + bottom nav: AICompanionTheme (dark color scheme, typography, spacing), BottomNavBar with 5 destinations, Scaffold wiring
+- [ ] 02-03-PLAN.md — Core data layer: Room database (4 tables), DAOs, DataStore preferences, Android Keystore AES-GCM token encryption, 5 repository implementations, DataModule DI
+- [ ] 02-04-PLAN.md — Core audio layer: SpeechRecognizerManager (main-thread safe), TextToSpeechManager (lifecycle safe, observable state), AudioFocusManager
+- [ ] 02-05-PLAN.md — Core network + parser: HA REST API (Retrofit + OkHttp, auth/baseURL interceptors), HomeAssistantRepositoryImpl, deterministic CommandParser with regex patterns
+- [ ] 02-06-PLAN.md — System integration: AndroidManifest permissions, VoiceRecognitionService (foreground, microphone type), AlarmManager ReminderScheduler, ReminderReceiver, BootReceiver, notification channels
+- [ ] 02-07-PLAN.md — Voice pipeline: VoiceViewModel MVI state machine (STT -> parse -> execute -> TTS), VoiceScreen with AnimatedMicButton and LastReplyCard
+- [ ] 02-08-PLAN.md — Chat + HomeControl screens: ChatScreen with message bubbles and source badges, HomeControlScreen with audit log and alias editor
+- [ ] 02-09-PLAN.md — Tasks + Settings screens: TasksScreen with pending reminders list and delete, SettingsScreen with HA connection, TTS voice, privacy/automation toggles
+- [ ] 02-10-PLAN.md — Final wiring + human verification: app module dependencies, compilation check, end-to-end MVP verification checkpoint
 
 ### Phase 3: AI Routing + Privacy
 **Goal**: All assistant requests flow through a single, observable AI gateway; the deterministic tier handles known commands without reaching the cloud; privacy mode is enforced at the network layer and cannot be bypassed
@@ -108,7 +120,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Scaffold | 6/6 | Complete ✓ | 2026-03-18 |
-| 2. Voice + Home Control MVP | 0/TBD | Not started | - |
+| 2. Voice + Home Control MVP | 0/10 | Not started | - |
 | 3. AI Routing + Privacy | 0/TBD | Not started | - |
 | 4. Background Ops + Memory | 0/TBD | Not started | - |
 | 5. Avatar | 0/TBD | Not started | - |
