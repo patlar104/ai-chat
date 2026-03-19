@@ -17,9 +17,11 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:domain"))
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
     testImplementation(libs.junit)
     testImplementation(libs.mockk)
     testImplementation(libs.coroutines.test)

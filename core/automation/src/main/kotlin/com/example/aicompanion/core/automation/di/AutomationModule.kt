@@ -7,5 +7,6 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 object AutomationModule {
-    // Placeholder — WorkManager worker bindings added in Phase 4+
+    // ReminderScheduler uses @Inject constructor — Hilt provides automatically.
+    // Future: WorkManager workers for briefings added in Phase 4.
 }
