@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Completed 03-02-PLAN.md
-last_updated: "2026-03-19T20:06:40.891Z"
+stopped_at: Completed 03-03-PLAN.md
+last_updated: "2026-03-19T20:10:24.754Z"
 progress:
   total_phases: 6
   completed_phases: 2
   total_plans: 20
-  completed_plans: 18
+  completed_plans: 19
 ---
 
 # Project State
@@ -54,6 +54,7 @@ Plan: 1 of 4
 | Phase 02 P09 | 15m | 2 tasks | 4 files |
 | Phase 02-voice-home-control-mvp P10 | 5m | 2 tasks | 1 files |
 | Phase 03 P02 | 7m | 3 tasks | 15 files |
+| Phase 03 P03 | 2m | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -102,6 +103,8 @@ Recent decisions affecting current work:
 - [Phase 03]: CloudAiService uses @Volatile var apiKey (not @Inject DataStore dependency) — mirrors HaAuthInterceptor.token pattern; keeps core:network free of core:data dependency
 - [Phase 03]: AiRouter.resolveIntent made suspend fun — required for async Gemini cloud call; all callers already in coroutine scope
 - [Phase 03]: ParsedIntent.CloudResponse sealed subtype added — cloud AI returns free-text not a typed QueryType; cleaner than overloading LocalQuery
+- [Phase 03]: PrivacyInterceptor uses @Volatile privacyModeEnabled field — keeps core:network free of core:data dependency, mirrors HaAuthInterceptor.token pattern
+- [Phase 03]: PrivacyInterceptor added as first application interceptor — cloud AI requests blocked before HA auth or base URL interceptors modify them
 
 ### Pending Todos
 
@@ -116,6 +119,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-19T20:06:40.889Z
-Stopped at: Completed 03-02-PLAN.md
+Last session: 2026-03-19T20:10:24.751Z
+Stopped at: Completed 03-03-PLAN.md
 Resume file: None

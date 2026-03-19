@@ -89,8 +89,8 @@ Requirements for initial release across all 7 phases (Phases 0–7). Each maps t
 
 ### Privacy & Offline
 
-- [ ] **PRIV-01**: Privacy mode toggle prevents all cloud AI and cloud TTS requests when enabled
-- [ ] **PRIV-02**: Privacy mode state is enforced in a network interceptor — not just in the UI
+- [x] **PRIV-01**: Privacy mode toggle prevents all cloud AI and cloud TTS requests when enabled
+- [x] **PRIV-02**: Privacy mode state is enforced in a network interceptor — not just in the UI
 - [ ] **PRIV-03**: Privacy mode active state is visually indicated in the UI
 - [ ] **PRIV-04**: Core commands (home control for local HA, reminders, task capture) work without network in offline mode
 - [ ] **PRIV-05**: Local TTS provides spoken feedback in offline mode
@@ -209,8 +209,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | MEMO-04 | Phase 4 | Pending |
 | MEMO-05 | Phase 4 | Pending |
 | MEMO-06 | Phase 4 | Pending |
-| PRIV-01 | Phase 3 | Pending |
-| PRIV-02 | Phase 3 | Pending |
+| PRIV-01 | Phase 3 | Complete |
+| PRIV-02 | Phase 3 | Complete |
 | PRIV-03 | Phase 3 | Pending |
 | PRIV-04 | Phase 3 | Pending |
 | PRIV-05 | Phase 3 | Pending |
