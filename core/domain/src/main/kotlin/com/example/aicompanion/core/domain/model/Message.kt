@@ -10,4 +10,4 @@ data class Message(
 )
 
 enum class MessageRole { USER, ASSISTANT }
-enum class SourceType { DETERMINISTIC, UNKNOWN }
+enum class SourceType { DETERMINISTIC, CLOUD, UNKNOWN }
