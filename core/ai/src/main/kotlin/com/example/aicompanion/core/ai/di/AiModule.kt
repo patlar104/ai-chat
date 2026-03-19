@@ -1,12 +1,17 @@
 package com.example.aicompanion.core.ai.di
 
+import com.example.aicompanion.core.ai.routing.AiRouter
+import com.example.aicompanion.core.ai.routing.AiRouterImpl
+import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object AiModule {
-    // CommandParser uses @Inject constructor — Hilt provides it automatically.
-    // Future: AI routing bindings (local model, cloud LLM) added in Phase 3.
+abstract class AiModule {
+    @Binds
+    @Singleton
+    abstract fun bindAiRouter(impl: AiRouterImpl): AiRouter
 }
