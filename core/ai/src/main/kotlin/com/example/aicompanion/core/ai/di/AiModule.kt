@@ -7,6 +7,6 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 object AiModule {
-    // Placeholder — AI router and ML Kit Prompt API bindings added in Phase 3+
-    // ML Kit GenAI is Beta (1.0.0-beta1) — implementation deferred to Phase 3
+    // CommandParser uses @Inject constructor — Hilt provides it automatically.
+    // Future: AI routing bindings (local model, cloud LLM) added in Phase 3.
 }
