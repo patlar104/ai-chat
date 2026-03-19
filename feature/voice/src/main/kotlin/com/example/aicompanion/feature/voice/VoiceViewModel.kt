@@ -1,5 +1,10 @@
 package com.example.aicompanion.feature.voice
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.Network
+import android.net.NetworkCapabilities
+import android.net.NetworkRequest
 import android.speech.SpeechRecognizer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -32,15 +37,18 @@ import com.example.aicompanion.core.domain.repository.ReminderRepository
 import com.example.aicompanion.core.domain.repository.SettingsRepository
 import com.example.aicompanion.core.automation.reminder.ReminderScheduler
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.TimeoutCancellationException
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeout
 import java.text.SimpleDateFormat
@@ -51,6 +59,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class VoiceViewModel @Inject constructor(
+    @ApplicationContext private val context: Context,
     private val speechManager: SpeechRecognizerManager,
     private val ttsManager: TextToSpeechManager,
     private val audioFocusManager: AudioFocusManager,
@@ -75,7 +84,29 @@ class VoiceViewModel @Inject constructor(
     private val _lastReply = MutableStateFlow<String?>(null)
     val lastReply: StateFlow<String?> = _lastReply.asStateFlow()
 
+    /** True when Privacy Mode is active — observed from DataStore via SettingsRepository. */
+    val privacyModeEnabled: StateFlow<Boolean> = settingsRepository.privacyModeEnabled
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
+
+    // ConnectivityManager must be declared before _isOnline since isCurrentlyOnline() uses it
+    private val connectivityManager =
+        context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+
+    /** True when the device has an active internet connection. */
+    private val _isOnline = MutableStateFlow(isCurrentlyOnline())
+    val isOnline: StateFlow<Boolean> = _isOnline.asStateFlow()
+
     private val sessionId = UUID.randomUUID().toString()
+
+    private val networkCallback = object : ConnectivityManager.NetworkCallback() {
+        override fun onAvailable(network: Network) {
+            _isOnline.value = true
+        }
+
+        override fun onLost(network: Network) {
+            _isOnline.value = isCurrentlyOnline()
+        }
+    }
 
     init {
         viewModelScope.launch {
@@ -91,6 +122,17 @@ class VoiceViewModel @Inject constructor(
                 }
             }
         }
+        // Register network callback for online/offline status
+        val request = NetworkRequest.Builder()
+            .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+            .build()
+        connectivityManager.registerNetworkCallback(request, networkCallback)
+    }
+
+    private fun isCurrentlyOnline(): Boolean {
+        val network = connectivityManager.activeNetwork ?: return false
+        val caps = connectivityManager.getNetworkCapabilities(network) ?: return false
+        return caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
     }
 
     fun onEvent(event: VoiceEvent) {
@@ -336,6 +378,7 @@ class VoiceViewModel @Inject constructor(
 
     override fun onCleared() {
         super.onCleared()
+        connectivityManager.unregisterNetworkCallback(networkCallback)
         viewModelScope.launch {
             speechManager.destroy()
             ttsManager.shutdown()
