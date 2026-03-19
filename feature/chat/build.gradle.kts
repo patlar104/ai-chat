@@ -23,6 +23,7 @@ dependencies {
     // Feature modules ONLY depend on core modules — NEVER on other feature modules
     implementation(project(":core:domain"))
     implementation(project(":core:ui"))
+    implementation(project(":core:data"))
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
