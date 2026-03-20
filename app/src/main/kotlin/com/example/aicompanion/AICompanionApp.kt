@@ -43,7 +43,17 @@ class AICompanionApp : Application() {
             enableVibration(true)
         }
 
+        // Daily briefings channel (default priority)
+        val briefingChannel = NotificationChannel(
+            "briefings",
+            "Briefings",
+            NotificationManager.IMPORTANCE_DEFAULT,
+        ).apply {
+            description = "Daily morning briefing notifications"
+        }
+
         notificationManager.createNotificationChannel(voiceChannel)
         notificationManager.createNotificationChannel(reminderChannel)
+        notificationManager.createNotificationChannel(briefingChannel)
     }
 }

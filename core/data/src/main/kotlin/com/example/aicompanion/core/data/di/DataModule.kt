@@ -5,15 +5,18 @@ import androidx.room.Room
 import com.example.aicompanion.core.data.database.AppDatabase
 import com.example.aicompanion.core.data.database.dao.AliasDao
 import com.example.aicompanion.core.data.database.dao.AuditLogDao
+import com.example.aicompanion.core.data.database.dao.MemoryDao
 import com.example.aicompanion.core.data.database.dao.MessageDao
 import com.example.aicompanion.core.data.database.dao.ReminderDao
 import com.example.aicompanion.core.data.repository.AliasRepositoryImpl
 import com.example.aicompanion.core.data.repository.AuditLogRepositoryImpl
+import com.example.aicompanion.core.data.repository.MemoryRepositoryImpl
 import com.example.aicompanion.core.data.repository.MessageRepositoryImpl
 import com.example.aicompanion.core.data.repository.ReminderRepositoryImpl
 import com.example.aicompanion.core.data.repository.SettingsRepositoryImpl
 import com.example.aicompanion.core.domain.repository.AliasRepository
 import com.example.aicompanion.core.domain.repository.AuditLogRepository
+import com.example.aicompanion.core.domain.repository.MemoryRepository
 import com.example.aicompanion.core.domain.repository.MessageRepository
 import com.example.aicompanion.core.domain.repository.ReminderRepository
 import com.example.aicompanion.core.domain.repository.SettingsRepository
@@ -47,6 +50,10 @@ abstract class DataModule {
 
     @Binds
     @Singleton
+    abstract fun bindMemoryRepository(impl: MemoryRepositoryImpl): MemoryRepository
+
+    @Binds
+    @Singleton
     abstract fun bindSettingsRepository(impl: SettingsRepositoryImpl): SettingsRepository
 
     companion object {
@@ -69,5 +76,8 @@ abstract class DataModule {
 
         @Provides
         fun provideReminderDao(db: AppDatabase): ReminderDao = db.reminderDao()
+
+        @Provides
+        fun provideMemoryDao(db: AppDatabase): MemoryDao = db.memoryDao()
     }
 }

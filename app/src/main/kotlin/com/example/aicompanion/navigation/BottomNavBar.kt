@@ -2,11 +2,13 @@ package com.example.aicompanion.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Alarm
+import androidx.compose.material.icons.filled.Bookmarks
 import androidx.compose.material.icons.filled.Chat
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Mic
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.outlined.Alarm
+import androidx.compose.material.icons.outlined.Bookmarks
 import androidx.compose.material.icons.outlined.Chat
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Mic
@@ -32,6 +34,7 @@ val bottomNavDestinations = listOf(
     BottomNavDestination("voice", "Voice", Icons.Filled.Mic, Icons.Outlined.Mic, "Voice"),
     BottomNavDestination("chat", "Chat", Icons.Filled.Chat, Icons.Outlined.Chat, "Chat"),
     BottomNavDestination("homecontrol", "Home", Icons.Filled.Home, Icons.Outlined.Home, "Home Control"),
+    BottomNavDestination("memory", "Memory", Icons.Filled.Bookmarks, Icons.Outlined.Bookmarks, "Memory"),
     BottomNavDestination("tasks", "Tasks", Icons.Filled.Alarm, Icons.Outlined.Alarm, "Tasks"),
     BottomNavDestination("settings", "Settings", Icons.Filled.Settings, Icons.Outlined.Settings, "Settings"),
 )

@@ -1,4 +1,16 @@
 {
+  "permissions": {
+    "allow": [
+      "Skill(gsd:execute-phase)",
+      "Skill(gsd:execute-phase:*)",
+      "WebSearch",
+      "Bash(git -C /Users/patricklarocque/Desktop/project/ai-chat add core/ai/build.gradle.kts core/ai/src/main/kotlin/com/example/aicompanion/core/ai/parser/CommandParser.kt core/ai/src/main/kotlin/com/example/aicompanion/core/ai/di/AiModule.kt)",
+      "Bash(git -C /Users/patricklarocque/Desktop/project/ai-chat rm core/ai/src/main/kotlin/com/example/aicompanion/core/ai/CoreAi.kt)",
+      "Bash(git -C:*)",
+      "Bash(node \"/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/bin/gsd-tools.cjs\" roadmap update-plan-progress --phase \"02\" --plan \"05\" --status \"complete\")",
+      "Bash(node \"/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/bin/gsd-tools.cjs\" commit \"docs\\(02-05\\): complete HA REST API and CommandParser plan\" --files \".planning/phases/02-voice-home-control-mvp/02-05-SUMMARY.md\")"
+    ]
+  },
   "enabledPlugins": {
     "postgres-best-practices@supabase-agent-skills": true,
     "skill-creator@claude-plugins-official": true,
