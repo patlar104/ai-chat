@@ -56,8 +56,8 @@ class TextToSpeechManager @Inject constructor(
 
     fun speak(
         text: String,
-        onDone: (() -> Unit)? = null,
         utteranceId: String = java.util.UUID.randomUUID().toString(),
+        onDone: (() -> Unit)? = null,
     ) {
         if (!initialized) return
         onDoneCallback = onDone

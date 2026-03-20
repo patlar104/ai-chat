@@ -55,10 +55,10 @@ class AiRouterTest {
     }
 
     @Test
-    fun `when CommandParser returns null and cloud responds, AiRouter returns CLOUD`() = runTest {
+    fun `when CommandParser returns Unknown and cloud responds, AiRouter returns CLOUD`() = runTest {
         val transcript = "tell me a joke"
         val cloudReply = "Why did the chicken cross the road? To get to the other side!"
-        every { commandParser.parse(transcript) } returns null
+        every { commandParser.parse(transcript) } returns ParsedIntent.Unknown
         every { cloudAiService.apiKey } returns "test-key"
         coEvery { cloudAiService.generateResponse(transcript) } returns cloudReply
 
@@ -69,7 +69,7 @@ class AiRouterTest {
     }
 
     @Test
-    fun `when CommandParser returns Unknown and cloud responds, AiRouter returns CLOUD`() = runTest {
+    fun `when CommandParser returns Unknown and cloud responds with complex answer, AiRouter returns CLOUD`() = runTest {
         val transcript = "what is the capital of France"
         val cloudReply = "The capital of France is Paris."
         every { commandParser.parse(transcript) } returns ParsedIntent.Unknown

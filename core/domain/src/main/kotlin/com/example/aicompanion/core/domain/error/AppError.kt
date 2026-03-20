@@ -5,15 +5,18 @@ package com.example.aicompanion.core.domain.error
  * All modules catch and surface errors using these types.
  * Using when(error) in UI/presentation layers will be exhaustive checked by the compiler.
  */
-sealed class AppError(override val message: String) : Exception(message) {
+sealed class AppError(
+    override val message: String,
+    override val cause: Throwable? = null
+) : Exception(message, cause) {
 
     /** A network I/O failure — HTTP errors, timeout, no connectivity. */
-    data class Network(val cause: Throwable) :
-        AppError("Network error: ${cause.message}")
+    data class Network(override val cause: Throwable) :
+        AppError("Network error: ${cause.message}", cause)
 
     /** A local storage failure — Room query error, DataStore write failure. */
-    data class Storage(val cause: Throwable) :
-        AppError("Storage error: ${cause.message}")
+    data class Storage(override val cause: Throwable) :
+        AppError("Storage error: ${cause.message}", cause)
 
     /** An audio pipeline failure — SpeechRecognizer error, TTS failure, audio focus lost. */
     data class AudioPipeline(val reason: String) :

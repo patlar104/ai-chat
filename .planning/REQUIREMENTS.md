@@ -180,8 +180,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CONV-02 | Phase 2 | Complete |
 | CONV-03 | Phase 2 | Complete |
 | CONV-04 | Phase 2 | Complete |
-| ROUT-01 | Phase 3 | Pending |
-| ROUT-02 | Phase 3 | Pending |
+| ROUT-01 | Phase 3 | Complete |
+| ROUT-02 | Phase 3 | Complete |
 | ROUT-03 | Phase 3 | Complete |
 | ROUT-04 | Phase 3 | Complete |
 | ROUT-05 | Phase 3 | Complete |
@@ -235,4 +235,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-18*
-*Last updated: 2026-03-18 — traceability updated after roadmap creation*
+*Last updated: 2026-03-19 — ROUT-01 and ROUT-02 marked Complete (doc gap closed; code was already satisfying both)*

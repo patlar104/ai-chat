@@ -7,7 +7,6 @@ import com.example.aicompanion.core.network.ha.HaAuthInterceptor
 import com.example.aicompanion.core.network.ha.HomeAssistantService
 import com.example.aicompanion.core.network.privacy.PrivacyInterceptor
 import com.example.aicompanion.core.network.repository.HomeAssistantRepositoryImpl
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -18,6 +17,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.converter.kotlinx.serialization.asConverterFactory
 import javax.inject.Singleton
 
 @Module
