@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.aicompanion.feature.chat"
+    namespace = "com.ariaai.companion.feature.chat"
     compileSdk = 35
     defaultConfig { minSdk = 26 }
 

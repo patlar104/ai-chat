@@ -21,3 +21,8 @@ local.properties
 # Test output
 /test-results/
 /jacoco/
+
+# App signing — never commit real keystore or passwords
+keystore.properties
+*.keystore
+*.jks

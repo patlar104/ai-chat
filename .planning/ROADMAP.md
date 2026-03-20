@@ -1,4 +1,25 @@
-# Roadmap: AI Companion App
+# Roadmap: Aria (AI Companion App)
+
+## Google Play Policy Mandate
+
+All phases must maintain compliance with the [Google Play Developer Program Policies](https://play.google.com/about/developer-content-policy/). This is a standing requirement — not a Phase 6 task.
+
+| Rule | Applies To |
+|---|---|
+| No new `<uses-permission>` without justification documented in the data safety form | Every phase that touches the manifest |
+| All background services must use `android:foregroundServiceType` with correct service type | Phase 4+ (WorkManager, automation) |
+| No cleartext HTTP traffic to non-LAN hosts — enforced via `network_security_config.xml` | All phases touching network |
+| All user data collected or transmitted must be documented in `assets/privacy_policy.md` | Every phase that adds data collection |
+| Sensitive permissions (e.g., `RECORD_AUDIO`) require a runtime permission rationale shown to the user before the request | Phase 2+ |
+| Background work must not drain battery excessively — WorkManager constraints required | Phase 4 |
+| Avatar and any visual assets must not use copyrighted likenesses | Phase 5 |
+| App must offer a data deletion path — implemented in Settings > Clear All Data | Done (2026-03-20) |
+| Package name must not use `com.example` — app is `com.ariaai.companion` | Done (2026-03-20) |
+| Release builds must be signed with a production keystore — see `keystore.properties.template` | Phase 6 |
+
+**When adding a phase or plan that touches any of the above areas, explicitly note how it satisfies the relevant policy rule.**
+
+---
 
 ## Overview
 
@@ -95,6 +116,12 @@ Plans:
   5. Conversational chatter from a session is not silently promoted to long-term memory without user review
 **Plans**: TBD
 
+**Google Play Compliance Notes (Phase 4):**
+- WorkManager jobs must declare appropriate `Constraints` (e.g., `requiresCharging` or `requiresBatteryNotLow`) to satisfy Play Store battery policy
+- Any new foreground service for background automations must declare the correct `android:foregroundServiceType` (e.g., `dataSync` or `shortService`)
+- The Memory screen delete flow satisfies the Play Store data deletion requirement — ensure it is discoverable (linked from Settings)
+- If new data types are collected or transmitted in this phase, update `assets/privacy_policy.md` before release
+
 ### Phase 5: Avatar
 **Goal**: The assistant has a visible, expressive face that reacts to voice session states in real time without causing frame drops or delaying TTS onset
 **Depends on**: Phase 4
@@ -105,6 +132,11 @@ Plans:
   3. Profiler confirms avatar rendering does not cause dropped frames or increase TTS onset latency measurably
   4. On a low-performance device, avatar degrades to a minimal indicator rather than freezing or causing lag
 **Plans**: TBD
+
+**Google Play Compliance Notes (Phase 5):**
+- Avatar assets must not use any copyrighted likeness, brand identity, or third-party IP
+- Rendering must not cause ANRs — Play Store monitors ANR rate; keep all animation work off the main thread
+- If any new permissions are required for avatar features, justify them in the data safety form
 
 ### Phase 6: Hardening & Release
 **Goal**: Every offline path, security surface, audit trail, and performance boundary is validated — the app is ready for daily use as a v1 release
@@ -117,6 +149,16 @@ Plans:
   4. All background job executions are traceable in the observable log with execution result and failure reason where applicable
   5. Privacy mode audit confirms no cloud calls escape to the network when privacy mode is enabled, across all code paths
 **Plans**: TBD
+
+**Google Play Submission Checklist (Phase 6):**
+- Generate release keystore using `keytool` — follow `keystore.properties.template` instructions
+- Fill out the Play Store **Data Safety** questionnaire (data types collected, shared, encrypted, deletable)
+- Write store listing: app name (Aria), short description, full description, screenshots, feature graphic
+- Confirm no `com.example` package references remain anywhere in source or manifest
+- Verify all runtime permission requests show a rationale dialog before the system prompt
+- Conduct internal test track → closed testing → open testing before production release
+- Final `assets/privacy_policy.md` review — ensure it reflects all data flows in the shipped build
+- Run `./gradlew assembleRelease` with a real keystore and verify APK is signed correctly
 
 ## Progress
 

@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.aicompanion.core.audio"
+    namespace = "com.ariaai.companion.core.audio"
     compileSdk = 35
     defaultConfig { minSdk = 26 }
     compileOptions {

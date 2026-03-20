@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.aicompanion.core.ai"
+    namespace = "com.ariaai.companion.core.ai"
     compileSdk = 35
     defaultConfig { minSdk = 26 }
     compileOptions {

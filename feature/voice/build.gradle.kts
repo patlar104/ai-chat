@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.aicompanion.feature.voice"
+    namespace = "com.ariaai.companion.feature.voice"
     compileSdk = 35
     defaultConfig { minSdk = 26 }
 

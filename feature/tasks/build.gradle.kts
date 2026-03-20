@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.aicompanion.feature.tasks"
+    namespace = "com.ariaai.companion.feature.tasks"
     compileSdk = 35
     defaultConfig { minSdk = 26 }
 

@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.aicompanion.feature.memory"
+    namespace = "com.ariaai.companion.feature.memory"
     compileSdk = 35
     defaultConfig { minSdk = 26 }
 

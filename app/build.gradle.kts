@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.compose.compiler)
@@ -6,20 +8,42 @@ plugins {
 }
 
 android {
-    namespace = "com.example.aicompanion"
+    namespace = "com.ariaai.companion"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.aicompanion"
+        applicationId = "com.ariaai.companion"
         minSdk = 26
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
     }
 
+    val keystorePropsFile = rootProject.file("keystore.properties")
+    if (keystorePropsFile.exists()) {
+        val keystoreProps = Properties().apply { load(keystorePropsFile.inputStream()) }
+        signingConfigs {
+            create("release") {
+                storeFile = file(keystoreProps["storeFile"] as String)
+                storePassword = keystoreProps["storePassword"] as String
+                keyAlias = keystoreProps["keyAlias"] as String
+                keyPassword = keystoreProps["keyPassword"] as String
+            }
+        }
+    }
+
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            val releaseSigningConfig = signingConfigs.findByName("release")
+            if (releaseSigningConfig != null) {
+                signingConfig = releaseSigningConfig
+            }
         }
     }
 

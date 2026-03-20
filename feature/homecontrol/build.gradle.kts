@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.aicompanion.feature.homecontrol"
+    namespace = "com.ariaai.companion.feature.homecontrol"
     compileSdk = 35
     defaultConfig { minSdk = 26 }
 

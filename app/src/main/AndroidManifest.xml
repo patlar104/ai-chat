@@ -20,7 +20,8 @@
 
     <application
         android:name=".AICompanionApp"
-        android:label="AI Companion"
+        android:label="Aria"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/Theme.AICompanion">
 
         <activity

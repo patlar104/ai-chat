@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Network Security Configuration for Aria.
+
+    All internet traffic defaults to HTTPS (cleartext blocked).
+
+    Exception: Home Assistant is typically self-hosted on a local network over HTTP.
+    Common local address patterns are whitelisted for cleartext. Users with a
+    publicly hosted HA instance behind TLS will automatically use HTTPS.
+-->
+<network-security-config>
+
+    <!-- Block cleartext everywhere by default -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Allow cleartext for common local/LAN Home Assistant addresses -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">homeassistant.local</domain>
+        <!-- RFC-1918 private ranges covered by common HA installs -->
+        <!-- Users on non-standard subnets should add their HA hostname here -->
+        <domain includeSubdomains="false">192.168.1.1</domain>
+        <domain includeSubdomains="false">192.168.0.1</domain>
+        <domain includeSubdomains="false">10.0.0.1</domain>
+    </domain-config>
+
+</network-security-config>

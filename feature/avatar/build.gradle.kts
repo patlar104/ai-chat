@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.aicompanion.feature.avatar"
+    namespace = "com.ariaai.companion.feature.avatar"
     compileSdk = 35
     defaultConfig { minSdk = 26 }
 
