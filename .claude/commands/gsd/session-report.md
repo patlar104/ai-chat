@@ -11,9 +11,9 @@ Generate a structured SESSION_REPORT.md document capturing session outcomes, wor
 </objective>
 
 <execution_context>
-@/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/workflows/session-report.md
+@/home/patri/code/ai-chat/.claude/get-shit-done/workflows/session-report.md
 </execution_context>
 
 <process>
-Execute the session-report workflow from @/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/workflows/session-report.md end-to-end.
+Execute the session-report workflow from @/home/patri/code/ai-chat/.claude/get-shit-done/workflows/session-report.md end-to-end.
 </process>

@@ -16,9 +16,9 @@ Designed for rapid multi-project workflows where remembering which phase/step yo
 </objective>
 
 <execution_context>
-@/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/workflows/next.md
+@/home/patri/code/ai-chat/.claude/get-shit-done/workflows/next.md
 </execution_context>
 
 <process>
-Execute the next workflow from @/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/workflows/next.md end-to-end.
+Execute the next workflow from @/home/patri/code/ai-chat/.claude/get-shit-done/workflows/next.md end-to-end.
 </process>

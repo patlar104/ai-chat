@@ -1,8 +1,10 @@
-# AI Companion App
+# Aria AI Companion
 
 ## What This Is
 
 A personal Android Kotlin app that combines three roles in one system: a voice-first AI companion, a device control command center, and a remote task operator. Built for personal daily use, the app understands spoken commands, controls smart-home devices and routines, assists in the background with briefings and automations, and presents an expressive AI avatar with realistic voice conversation.
+
+**Package:** `com.ariaai.companion`
 
 ## Core Value
 
@@ -70,13 +72,16 @@ Anti-hallucination rules from constitution: Never invent dependency versions or 
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Android-native Kotlin only | Cross-platform adds complexity before value is proven | — Pending |
-| Hybrid AI routing (deterministic → local → cloud) | Balances speed, privacy, and intelligence | — Pending |
-| Home Assistant as home control fabric | Broad device support, established ecosystem | — Pending |
-| Two-tier TTS (local utility + cloud companion) | Speed for confirmations, quality for conversation | — Pending |
-| 2D avatar first | Presence before realism; don't let avatar delay daily usefulness | — Pending |
-| Modular monolith (15 modules) | Replaceable AI/audio/avatar without full rewrite | — Pending |
-| Room + DataStore | Standard Android persistence, no over-engineering | — Pending |
+| Android-native Kotlin only | Cross-platform adds complexity before value is proven | Confirmed — Phase 1 |
+| Hybrid AI routing (deterministic → local → cloud) | Balances speed, privacy, and intelligence | Implemented — Phase 3 |
+| Home Assistant as home control fabric | Broad device support, established ecosystem | Implemented — Phase 2 |
+| Two-tier TTS (local utility + cloud companion) | Speed for confirmations, quality for conversation | Implemented — Phase 2 |
+| 2D avatar first | Presence before realism; don't let avatar delay daily usefulness | Phase 5 |
+| Modular monolith (15 modules) | Replaceable AI/audio/avatar without full rewrite | Confirmed — Phase 1 |
+| Room + DataStore | Standard Android persistence, no over-engineering | Confirmed — Phase 1 |
+| KSP-only annotation processing | No kapt anywhere in project | Confirmed — Phase 1 |
+| @Volatile interceptor fields | Update from DataStore Flow without blocking OkHttp threads | Confirmed — Phase 2 |
+| PrivacyInterceptor as first interceptor | Block cloud before HA auth runs | Confirmed — Phase 3 |
 
 ---
-*Last updated: 2026-03-18 after initialization*
+*Last updated: 2026-03-22 — Phases 01–03 complete; Phase 04 (Background Ops + Memory) next*

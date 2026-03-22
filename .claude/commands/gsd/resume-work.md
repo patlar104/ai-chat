@@ -22,11 +22,11 @@ Routes to the resume-project workflow which handles:
   </objective>
 
 <execution_context>
-@/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/workflows/resume-project.md
+@/home/patri/code/ai-chat/.claude/get-shit-done/workflows/resume-project.md
 </execution_context>
 
 <process>
-**Follow the resume-project workflow** from `@/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/workflows/resume-project.md`.
+**Follow the resume-project workflow** from `@/home/patri/code/ai-chat/.claude/get-shit-done/workflows/resume-project.md`.
 
 The workflow handles all resumption logic including:
 

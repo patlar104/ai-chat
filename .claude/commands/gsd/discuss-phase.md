@@ -1,7 +1,7 @@
 ---
 name: gsd:discuss-phase
 description: Gather phase context through adaptive questioning before planning. Use --auto to skip interactive questions (Claude picks recommended defaults).
-argument-hint: "<phase> [--auto]"
+argument-hint: "<phase> [--auto] [--batch] [--analyze]"
 allowed-tools:
   - Read
   - Write
@@ -29,8 +29,8 @@ Extract implementation decisions that downstream agents need — researcher and 
 </objective>
 
 <execution_context>
-@/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/workflows/discuss-phase.md
-@/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/templates/context.md
+@/home/patri/code/ai-chat/.claude/get-shit-done/workflows/discuss-phase.md
+@/home/patri/code/ai-chat/.claude/get-shit-done/templates/context.md
 </execution_context>
 
 <context>

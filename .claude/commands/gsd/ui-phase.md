@@ -20,8 +20,8 @@ Flow: Validate → Research UI → Verify UI-SPEC → Done
 </objective>
 
 <execution_context>
-@/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/workflows/ui-phase.md
-@/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/references/ui-brand.md
+@/home/patri/code/ai-chat/.claude/get-shit-done/workflows/ui-phase.md
+@/home/patri/code/ai-chat/.claude/get-shit-done/references/ui-brand.md
 </execution_context>
 
 <context>
@@ -29,6 +29,6 @@ Phase number: $ARGUMENTS — optional, auto-detects next unplanned phase if omit
 </context>
 
 <process>
-Execute @/Users/patricklarocque/Desktop/project/ai-chat/.claude/get-shit-done/workflows/ui-phase.md end-to-end.
+Execute @/home/patri/code/ai-chat/.claude/get-shit-done/workflows/ui-phase.md end-to-end.
 Preserve all workflow gates.
 </process>
