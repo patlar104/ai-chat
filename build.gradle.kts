@@ -35,6 +35,11 @@ subprojects {
     }
 }
 
+// Apply ktlint to all submodules
+subprojects {
+    apply(plugin = "org.jlleitschuh.gradle.ktlint")
+}
+
 // Apply detekt at root level for project-wide analysis
 apply(plugin = "io.gitlab.arturbosch.detekt")
 
